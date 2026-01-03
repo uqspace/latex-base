@@ -236,17 +236,6 @@
 % - Test reports
 % - Checklists
 
-\NewDocumentCommand \insertnew { m }{
-    \textcolor { information } { #1 } 
-}
-\NewDocumentCommand \update { m !o }{
-
-    \setul { -0.7ex }{ 0.3ex }
-    \setulcolor { correction } \textul { #1 }
-    \IfValueT { #2 }{ \textcolor { correction } { #2 } }
-    
-}
-
 \bool_new:N \g_used_bool
 \NewDocumentCommand \resetsingleuse { }{
     \bool_gset_false:N \g_used_bool
