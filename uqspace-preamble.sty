@@ -229,6 +229,24 @@
     overlay
 }}
 
+%% ----------------------------- PDF commands ------------------------------
+
+%Commands needed for the PDF merge insertion used in tech reports for 
+% - Engineering Drawings 
+% - Test reports
+% - Checklists
+
+\bool_new:N \g_used_bool
+\NewDocumentCommand \resetsingleuse { }{
+    \bool_gset_false:N \g_used_bool
+}
+\NewDocumentCommand \singleuse { m }{
+    \bool_if:NF \g_used_bool {
+        \bool_gset_true:N \g_used_bool
+        #1
+    }
+}
+
 %% ============================================================================
 
 
